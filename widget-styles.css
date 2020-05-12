@@ -1,0 +1,235 @@
+:root {
+  --widget-font-family: 'Raleway', sans-serif;
+  --widget-font-weight: 500;
+  --widget-font-bold: 700;
+  --widget-font-size: 12px;
+  --widget-bg: #FFFFFF;
+  --widget-color: #000000;
+  --widget-border: #CCCCCC;
+
+  /* Article 1 - Widget */
+  --widget-a1-title-bg: #424242;
+  --widget-a1-title-color: #FFFFFF;
+  --widget-a1-title-fs: 13px;
+  --widget-a1-title-fw: 500;
+
+  /* Article 2 - Widget */
+  --widget-a2-promo: #F15E33;
+  --widget-a2-promo-bar: #FAFAFA;
+  --widget-a2-text-color: #828282;
+  --widget-a2-price-color: #4F4F4F;
+  --widget-a2-button-bg: #00BE1B;
+  --widget-a2-button-color: #FFFFFF;
+  --widget-a2-give-color: #19A4D7;
+
+  /* Article 3 - Widget */
+  --widget-a3-button-bg: #FAFAFA;
+  --widget-a3-button-color: #777777;
+}
+
+/* Reset */
+p,
+a {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#your-widget {
+  border: 0;
+  padding: 20px;
+  margin-top: 20px;
+  background: var(--widget-bg);
+  color: var(--widget-color);
+  font-weight: var(--widget-font-weight);
+  font-family: var(--widget-font-family);
+  width: 305px;
+}
+
+/* Box Shadow */
+.widget-section-2,
+.later,
+.social {
+  box-shadow: 0 1px 1px 0 #bbbbbb;
+}
+
+/* Widget Container */
+.widget-container,
+.widget-section-2 .buttons-container,
+.widget-section-3 {
+  display: grid;
+}
+
+.widget-container {
+  grid-template-columns: 1fr;
+  grid-template-rows: 100%;
+  grid-gap: 10px;
+}
+
+.widget-section-2 .buttons-container,
+.widget-section-3 {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 100%;
+  grid-gap: 20px;
+}
+
+.widget-section-1,
+.buttons-container .give-now {
+  border-radius: 3px;
+}
+
+.widget-section-2,
+.widget-section-2 .give,
+.widget-section-3 .later,
+.widget-section-3 .social {
+  padding: 10px;
+}
+
+.widget-section-2,
+.widget-section-3 .later,
+.widget-section-3 .social {
+  border: 1px solid var(--widget-border);
+}
+
+.widget-section-1,
+.widget-section-2,
+.widget-section-2-bar::before,
+.widget-section-2 .donate {
+  position: relative;
+}
+
+.widget-section-1::after,
+.widget-section-2-bar,
+.buttons-container .donate::before {
+  position: absolute;
+}
+
+.widget-section-1 span,
+.widget-section-2 .lead span,
+.widget-section-2 .text span,
+.buttons-container .donate input,
+.widget-section-3 .later,
+.widget-section-3 .social,
+.buttons-container .give-now,
+.buttons-container .donate::before {
+  font-weight: var(--widget-font-bold);
+}
+
+.widget-section-1,
+.buttons-container .give-now,
+.widget-section-3 .later,
+.widget-section-3 .social {
+  text-align: center;
+}
+
+/* Widget Section 1 */
+.widget-section-1 {
+  background-color: var(--widget-a1-title-bg);
+  color: var(--widget-a1-title-color);
+  padding: 15px;
+  font-size: var(--widget-a1-title-fs);
+}
+
+.widget-section-1 span::before,
+.widget-section-2 .give span::before {
+  content: "$";
+}
+
+.widget-section-1::after {
+  content: "";
+  top: 100%;
+  right: 12.5%;
+  width: 0;
+  height: 0;
+  border-top: 7px solid var(--widget-a1-title-bg);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+}
+
+/* Widget Section 2 */
+.widget-section-2-bar {
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid var(--widget-border);
+  width: 100%;
+  height: 10px;
+  background-color: var(--widget-a2-promo-bar);
+  z-index: 1;
+}
+
+.widget-section-2-bar::before {
+  content: "";
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 75%;
+  height: 100%;
+  background-color: var(--widget-a2-promo);
+  z-index: 2;
+}
+
+.widget-section-2 p {
+  color: var(--widget-a2-text-color);
+  font-size: var(--widget-font-size);
+}
+
+.widget-section-2 .text,
+.widget-section-2 .lead {
+  padding: 15px 10px 10px;
+}
+
+.widget-section-2 .text {
+  padding-top: 5px;
+  line-height: 18px;
+}
+
+.widget-section-2 .lead span {
+  color: var(--widget-a2-promo);
+}
+
+.widget-section-2 .buttons-container {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.buttons-container .donate input {
+  padding: 12px 20px;
+  width: 100%;
+}
+
+.buttons-container .donate::before {
+  content: "$";
+  left: 10px;
+  top: 29%;
+  color: var(--widget-a2-text-color);
+}
+
+.buttons-container .give-now {
+  color: var(--widget-a2-button-color);
+  background-color: var(--widget-a2-button-bg);
+  padding: 12px;
+}
+
+.widget-section-2 .give a,
+.widget-section-2 .give span {
+  color: var(--widget-a2-give-color);
+  font-style: italic;
+  text-decoration: none;
+}
+
+.widget-section-2 .give span::after {
+  content: "?";
+}
+
+/* Widget Section 3 */
+.widget-section-3 .later,
+.widget-section-3 .social {
+  color: var(--widget-a3-button-color);
+  background-color: var(--widget-a3-button-bg);
+  font-size: var(--widget-font-size);
+}
